@@ -32,6 +32,7 @@ public class Evaluate {
 		System.out.println("结果："+values.pop());
 	}
 	public static void main(String[] args) {
+		
 		Scanner read = new Scanner(System.in);
 		System.out.println("请输入计算公式");
 		String s = read.nextLine();
