@@ -15,6 +15,7 @@ public class binarySearchDG {
 		else if(key > list[mid]) return rank(list,mid, right, key);
 		else return mid;
 	}
+	
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
 		Scanner read = new Scanner(System.in);
