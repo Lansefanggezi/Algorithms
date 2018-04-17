@@ -1,24 +1,36 @@
 package com.sort.select;
 
 public class SelectSort {
-	
-	public static void selectSort(int [] array)
+
+	/**
+	 * 
+	 * 如果每次比较完都交换，那就是交换排序。如果每次循环完才交换，那就是简单选择排序。
+	 * 
+	 * */
+	public static void selectSort(int[] array)
 	{
-		int length = array.length;
+		//遍历整个序列，将最小的数放在最前面。
+		//遍历剩下的序列。将最小的数放在最前面。
+		//重复第二部，直到最后一个数
 		
-		//设定插入此数即循环此数,第一个数不需要比较
-		for(int i = 1; i<length; i++)
+		int length = array.length;
+		for(int i = 0; i<length; i++)
 		{
-			//1.获取插入数的值、有序数列的最后一位
-			int inserValue = array[i];
-			
-			//循环比较插入数，如果插入数比当前数小。当前数后移一位
-			int j = i-1;
-			for(; j>=0&&array[j]>inserValue;j--)
+			int min = array[i];
+			int key = i;
+			for(int j = i+1; j<length; j++)
 			{
-				array[j+1] = array[j];
+				if (min > array[j]) 
+				{
+					min = array[j];
+					key = j;
+				}
 			}
-			array[j+1] = inserValue;
+			
+			//将最小的数放在最前面
+			array[key] = array[i];
+			array[i] = min;
 		}
 	}
+	
 }
