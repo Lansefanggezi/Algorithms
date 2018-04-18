@@ -9,10 +9,12 @@ public class TestSelectSort {
 		int[] array = {2,4,1,6,4,8,9};
 		SelectSort.selectSort(array);
 		
-		for(int i = 0; i<array.length; i++)
-		{
-			System.out.print(array[i]+ ",");
-		}
+//		for(int i = 0; i<array.length; i++)
+//		{
+//			System.out.print(array[i]+ ",");
+//		}
+		
+		System.out.println(23 / 3);
 	}
 
 }
