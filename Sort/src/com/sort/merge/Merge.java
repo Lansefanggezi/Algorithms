@@ -42,7 +42,7 @@ public class Merge {
 		//∏ﬂŒª÷∏’Î
 		int j = mid+1;
 
-		for(int k = 0; k<array.length; k++)
+		for(int k = low; k<=high; k++)
 		{
 			arrayCopy[k] = array[k];
 		}
