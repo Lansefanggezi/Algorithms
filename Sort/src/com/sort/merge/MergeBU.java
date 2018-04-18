@@ -19,6 +19,7 @@ public class MergeBU {
 			//下一个子数组的开始位置 lo += size + size
 			for(int lo = 0; lo < len - size; lo += size + size )
 			{
+				//最后一个数组的最高位当lo+size+size-1 又可能超出数组的length
 //				merge(array, lo, lo+size-1, lo+size+size-1);
 				merge(array, lo, lo+size-1, Math.min(lo+size+size-1, len-1));
 			}
