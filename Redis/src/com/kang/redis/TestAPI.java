@@ -7,7 +7,8 @@ import redis.clients.jedis.Jedis;
 public class TestAPI {
 	public static void main(String[] args) 
 	{
-		Jedis jedis = new Jedis("127.0.0.1",6379);
+		Jedis jedis = new Jedis("192.168.121.128",6379);
+		jedis.auth("kang");
 		
 		jedis.set("k1","v1");
 		jedis.set("k2","v2");
@@ -18,7 +19,5 @@ public class TestAPI {
 		
 		Set<String> sets = jedis.keys("*");
 		System.out.println(sets.size());
-		
-		//鍚庣画璇峰弬鑰冭剳鍥撅紝瀹跺涵浣滀笟锛屾暡涓�閬�......
 	}
 }

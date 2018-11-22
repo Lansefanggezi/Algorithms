@@ -42,28 +42,29 @@ public class Merge {
 		//高位指针
 		int j = mid+1;
 
-		for(int k = low; k<=high; k++)
+		//保存值
+		for(int k = low;k<=high;k++)
 		{
 			arrayCopy[k] = array[k];
 		}
+		
 		//合并数组
-		for(int k = low; k<=high; k++)
+		for(int k = low;k<=high;k++)
 		{
 			//低位数组用完
 			if(i>mid)
 				array[k] = arrayCopy[j++];
 			
 			//高位数组用完
-			else if (j>high)
+			else if(j>high)
 				array[k] = arrayCopy[i++];
 			
 			//低位大与高位
-			else if(arrayCopy[j] > arrayCopy[i])
-				array[k] = arrayCopy[i++];
-			//上级意外
-			else 
+			else if(arrayCopy[i] > arrayCopy[j])
 				array[k] = arrayCopy[j++];
-			
+			//上记以外
+			else
+				array[k] = arrayCopy[i++];
 		}
 		
 	}

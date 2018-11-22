@@ -4,26 +4,30 @@ public class QuickSort {
 
 	public static void quickSort(int[] array, int start,int end)
 	{
-		if (end < start)
+		if (end <= start)
 		{
 			return;
 		}
 		
+		//哨兵
+		int temp = array[start];
+
+		
 		int left = start;
 		int right = end;
 		
-		//哨兵
-		int temp = array[start];
-		 
 		while(left < right){
-			while(temp >= array[right] && left<right)
+			while(array[right] >= temp  && left<right)
+			{
 				right--;
+			}
 			
-			while (temp <= array[left] && left<right)
+			while (array[left] <= temp && left<right)
+			{
 				left++;
-			
+			}
 			//如果满足条件则交换
-			if(left > right)
+			if(left < right)
 			{
 				int x = array[left];
 				array[left] = array[right];

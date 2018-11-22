@@ -1,12 +1,14 @@
 package com.kang.redis;
 
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
 
 public class Ping {
 
 	public static void main(String[] args) {
-		
-		Jedis jedis = new Jedis("192.168.121.128",5000);
+		JedisPool jedisPool = DoubleCheckLock.getJedisPoolInstance();
+		Jedis jedis = jedisPool.getResource();
+		jedis.auth("kang");
 		System.out.println(jedis.ping());
 	}
 }

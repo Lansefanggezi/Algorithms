@@ -2,9 +2,7 @@ package com.kang.test;
 
 import java.io.File;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
-import org.apache.log4j.spi.LoggerFactory;
 
 public class DiffUtilsTest {
 	
